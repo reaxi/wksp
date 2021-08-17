@@ -21,13 +21,13 @@ yarn workspaces extension
 
 **Install**
 
-```ps
+```
 npm i -g wksp
 ```
 
 **then**
 
-```ps
+```
 wksp <cmd>
 ```
 
@@ -37,7 +37,9 @@ wksp <cmd>
 
 if your current directory is the workspace root you can specify the name
 
-`wksp -n my-app <cmd> `
+```
+wksp -n my-app <cmd>
+```
 
 > shorthand for: yarn workspace \<name> \<cmd>
 
@@ -60,7 +62,7 @@ projects/
     /ui-lib/
 ```
 
-```ps
+```
 wksp start -n client
 ```
 >--name
@@ -69,6 +71,8 @@ wksp start -n client
 
 cwd: `.../monorepo/projects/server`
 
-`wksp start`
+```
+wksp start
+```
 
 > wksp will detect the package name related with this folder and run the start script defined in package.json
