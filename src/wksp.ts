@@ -3,12 +3,17 @@ const execa = require('execa');
 
 require('jsonc-require');
 
-export async function wksp(command: string, options: { name: string }) {
+export async function wksp(
+    command: string,
+    variadic: string[],
+    options: { name: string }
+) {
     try {
         const name = options.name ?? getPackageName();
         const cmd = command ?? '';
+        const args = variadic ?? '';
 
-        execa('yarn', ['workspace', name, cmd], {
+        execa('yarn', ['workspace', name, cmd, ...args], {
             stdio: 'inherit',
         }); //
     } catch (error) {

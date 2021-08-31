@@ -24,8 +24,14 @@ program
 
     .option('-n, --name <name> ', 'project name (as in package.json)')
     .argument('[command]', "package script you'd like to run")
+    .argument(
+        '[variadic...]',
+        "variadic arguments you'd like to pass to script"
+    )
 
-    .action((command: string, options: any) => wksp(command, options));
+    .action((command: string, variadic: string[], options: any) =>
+        wksp(command, variadic, options)
+    );
 
 //verify updates
 program.hook('postAction', async () => {
