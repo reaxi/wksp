@@ -43,6 +43,31 @@ wksp -n my-app <cmd>
 
 > shorthand for: yarn workspace \<name> \<cmd>
 
+**Variadic arguments**
+
+Variadic arguments are supported, (any arguments for the command)
+
+```sh
+wksp add react react-dom react-router
+# cli cmd args...
+```
+
+**Passing options**
+
+Options that are specific to yarn, require an `--` `--options`
+
+```sh
+wksp add tailwindcss postcss autoprefixer -- --dev
+# cli cmd args...                         -- yarn options
+```
+
+this applies when running scripts
+
+```sh
+wksp start -- --port 3002 --watch
+# cli cmd -- script options
+```
+
 <!-- ## Features
 
 -   alias
@@ -65,7 +90,8 @@ projects/
 ```
 wksp start -n client
 ```
->--name
+
+> --name
 
 ### project
 
@@ -76,3 +102,8 @@ wksp start
 ```
 
 > wksp will detect the package name related with this folder and run the start script defined in package.json
+
+---
+
+Have a great idea how we can extend yarn workspaces features ?
+[suggest here](https://github.com/Andrew-Colman/wksp/issues/new)
