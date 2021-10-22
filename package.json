@@ -1,17 +1,25 @@
 {
     "name": "wksp",
-    "version": "0.2.0",
+    "version": "0.3.1",
     "main": "dist/index.js",
     "source": "./src/index.ts",
     "repository": "https://github.com/andrew-colman/wksp",
     "author": {
         "name": "Andrew Colman"
     },
+    "keywords": [
+        "wksp",
+        "monorepo management",
+        "yarn",
+        "workspaces",
+        "workspace"
+    ],
     "license": "MIT",
     "bin": {
         "wksp": "dist/index.js"
     },
     "scripts": {
+        "prepublishOnly": "npm run build",
         "build": "rollup --config rollup.config.js",
         "dev": "sucrase-node ./src/index.ts ",
         "test": "jest ",
@@ -22,7 +30,7 @@
         "@rollup/plugin-node-resolve": "^13.0.4",
         "@rollup/plugin-typescript": "^8.2.5",
         "@types/jest": "^27.0.1",
-        "@types/node": "^16.3.1",
+        "@types/node": "^16.11.2",
         "jest": "^27.0.6",
         "rollup": "^2.56.2",
         "rollup-plugin-preserve-shebang": "^1.0.1",
